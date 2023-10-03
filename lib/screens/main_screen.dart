@@ -26,7 +26,7 @@ class MenuScreen extends StatelessWidget {
               onPressed: () {
                 _goToPage(
                   context,
-                  const ImplicitAnimationsScreen(),
+                  ImplicitAnimationsScreen(),
                 );
               },
               child: const Text("Implicit Animations"),
