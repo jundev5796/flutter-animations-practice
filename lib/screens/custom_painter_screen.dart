@@ -28,6 +28,7 @@ class _CustomPainterScreenState extends State<CustomPainterScreen>
     return '${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}';
   }
 
+  // replay
   void _replay() {
     _animationController.reset();
     _startAnimation();
@@ -36,6 +37,7 @@ class _CustomPainterScreenState extends State<CustomPainterScreen>
     });
   }
 
+  // play
   void _play() {
     if (_animationController.isAnimating) {
       _animationController.stop();
@@ -54,6 +56,7 @@ class _CustomPainterScreenState extends State<CustomPainterScreen>
     });
   }
 
+  // resume
   void _resumeAnimation() {
     _animationController.forward();
     _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
@@ -66,6 +69,7 @@ class _CustomPainterScreenState extends State<CustomPainterScreen>
     });
   }
 
+  // play after pause
   void _startAnimation() {
     setState(() {
       _duration = 10; // Reset duration before starting
@@ -73,6 +77,7 @@ class _CustomPainterScreenState extends State<CustomPainterScreen>
     _resumeAnimation();
   }
 
+  // stop
   void _stop() {
     _animationController.stop();
     _animationController.value = 0.0; // Reset the red arc
