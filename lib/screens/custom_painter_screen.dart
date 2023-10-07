@@ -11,14 +11,57 @@ class _CustomPainterScreenState extends State<CustomPainterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFF1f2937),
       appBar: AppBar(
-        title: const Text("Custom Painter"),
-      ),
-      body: Center(
-        child: CustomPaint(
-          painter: TimerPainter(),
-          size: const Size(400, 400),
+        backgroundColor: const Color(0xFF1f2937),
+        title: const Text(
+          "Custom Painter",
+          style: TextStyle(
+            color: Colors.white,
+          ),
         ),
+      ),
+      body: Column(
+        children: [
+          Center(
+            child: CustomPaint(
+              painter: TimerPainter(),
+              size: const Size(400, 400),
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.replay,
+                  color: Colors.white,
+                  size: 40,
+                ),
+              ),
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.play_arrow_rounded,
+                  color: Colors.white,
+                  size: 40,
+                ),
+              ),
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.stop_rounded,
+                  color: Colors.white,
+                  size: 40,
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
@@ -31,7 +74,7 @@ class TimerPainter extends CustomPainter {
 
     // draw circle
     final circlePaint = Paint()
-      ..color = const Color(0xFFEEEEEE)
+      ..color = const Color.fromARGB(255, 71, 74, 92)
       ..style = PaintingStyle.stroke
       ..strokeWidth = 30;
 
@@ -40,6 +83,8 @@ class TimerPainter extends CustomPainter {
       size.width / 2 * 0.8,
       circlePaint,
     );
+
+    // draw arc
   }
 
   @override
