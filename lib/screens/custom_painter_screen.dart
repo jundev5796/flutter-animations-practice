@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class CustomPainterScreen extends StatefulWidget {
@@ -80,11 +82,29 @@ class TimerPainter extends CustomPainter {
 
     canvas.drawCircle(
       center,
-      size.width / 2 * 0.8,
+      (size.width / 2) * 0.8,
       circlePaint,
     );
 
     // draw arc
+    final arcRect = Rect.fromCircle(
+      center: center,
+      radius: (size.width / 2) * 0.8,
+    );
+
+    final arcPaint = Paint()
+      ..color = Colors.red
+      ..style = PaintingStyle.stroke
+      ..strokeCap = StrokeCap.round
+      ..strokeWidth = 30;
+
+    canvas.drawArc(
+      arcRect,
+      0 * pi,
+      1.5 * pi,
+      false,
+      arcPaint,
+    );
   }
 
   @override
