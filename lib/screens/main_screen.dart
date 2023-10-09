@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animations_practice/screens/custom_painter_screen.dart';
 import 'package:flutter_animations_practice/screens/explicit_animations_screen.dart';
+import 'package:flutter_animations_practice/screens/flashcards_screen.dart';
 import 'package:flutter_animations_practice/screens/implicit_animations_screen.dart';
 
 class MenuScreen extends StatelessWidget {
@@ -50,6 +51,15 @@ class MenuScreen extends StatelessWidget {
                 );
               },
               child: const Text("Custom Painter"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                _goToPage(
+                  context,
+                  const FlashcardsScreen(),
+                );
+              },
+              child: const Text('Flashcards'),
             ),
           ],
         ),
